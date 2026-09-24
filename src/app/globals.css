@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+
+  --color-obsidian: #090a09;
+  --color-charcoal: #101311;
+  --color-surface: #151a16;
+  --color-surface-card: #131714;
+  --color-surface-elevated: #1a211c;
+  --color-ivory: #faf8f5;
+  --color-parchment: #e8e2d8;
+  --color-sand: #b8b0a2;
+  --color-emerald-subtle: #182e23;
+  --color-emerald-brand: #244b3a;
+  --color-emerald-accent: #336b53;
+  --color-emerald-bright: #438a6c;
+  --color-gold-muted: #bfa075;
+  --color-gold-champagne: #c5a880;
+  --color-gold-bright: #e2cca6;
+}
+
+:root {
+  --background: #090a09;
+  --foreground: #faf8f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #090a09;
+  color: #faf8f5;
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #244b3a;
+  selection-color: #faf8f5;
+}
+
+::selection {
+  background-color: #244b3a;
+  color: #faf8f5;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090a09;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #244b3a;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a880;
+}
+
+/* Luxury Texture & Shimmer */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #faf8f5 0%, #e2cca6 50%, #c5a880 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emerald-gradient-border {
+  border: 1px solid rgba(51, 107, 83, 0.25);
+  box-shadow: 0 0 30px -10px rgba(36, 75, 58, 0.15);
+}
+
+.luxury-glass {
+  background: rgba(16, 19, 17, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.12);
+}
+
+.luxury-glass-elevated {
+  background: rgba(26, 33, 28, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 168, 128, 0.18);
+}
+
+.subtle-grid-bg {
+  background-image: radial-gradient(rgba(197, 168, 128, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Fine-tune typography */
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), system-ui, sans-serif;
+}

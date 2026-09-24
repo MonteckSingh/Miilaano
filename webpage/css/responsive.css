@@ -1,0 +1,367 @@
+/* ==========================================================================
+   Miilaano Fine Dine — Rock-Solid Responsive & Alignment Stylesheet
+   Zero horizontal overflow, fluid typography, pixel-perfect alignment
+   ========================================================================== */
+
+/* Universal Responsive Fixes */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Large Screens Spacing Fix (1081px - 1280px) */
+@media (min-width: 1081px) and (max-width: 1240px) {
+  .nav-links {
+    gap: 0.25rem;
+  }
+  
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 0.45rem 0.65rem;
+    letter-spacing: 0.08em;
+  }
+  
+  .brand-logo .logo-main {
+    font-size: 1.6rem;
+    letter-spacing: 0.16em;
+  }
+  
+  .btn-royal-call {
+    font-size: 0.78rem;
+    padding: 0.6rem 1.15rem;
+  }
+}
+
+/* Tablets, Foldables & Small Desktops (<= 1080px) */
+@media (max-width: 1080px) {
+  .top-bar {
+    display: none; /* Keep clean for mobile & tablet screen real-estate */
+  }
+
+  .header-main {
+    padding: 0.2rem 0;
+  }
+
+  .nav-wrapper {
+    height: 68px;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(37, 6, 13, 0.98) 0%, rgba(20, 3, 7, 0.99) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem 1.75rem 2rem 1.75rem;
+    gap: 0.5rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+    border-top: 1px solid rgba(212, 167, 80, 0.3);
+    border-bottom: 2px solid var(--color-gold-primary);
+    transform: translateY(-150%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    color: #EDE4D8;
+    border-bottom: 1px solid rgba(212, 167, 80, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    background: rgba(212, 167, 80, 0.15);
+    color: var(--color-gold-bright);
+    border-color: rgba(212, 167, 80, 0.4);
+  }
+
+  .nav-actions .btn-royal-call {
+    display: none; /* Handled in sticky bottom bar on mobile & tablets */
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .about-media {
+    max-width: 580px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .about-floating-card {
+    right: 15px;
+    bottom: -15px;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .kitchen-differentiator-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .diff-badges-box {
+    justify-content: center;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Medium Tablets & Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 0 4.5rem 0;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 2.85rem;
+  }
+
+  .hero-title span {
+    font-size: 1.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.05rem;
+    padding: 0 0.5rem;
+  }
+
+  .hero-cuisine-pills {
+    font-size: 0.95rem;
+    gap: 0.35rem 0.75rem;
+  }
+
+  .hero-cuisine-pills span:not(:last-child)::after {
+    margin-left: 0.75rem;
+  }
+
+  .hero-address-highlight {
+    font-size: 0.84rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 0.85rem;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 2.15rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-features-list {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .menu-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .dietary-toggle-group {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .diet-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 0.5rem 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .menu-pdf-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .menu-pdf-banner .btn {
+    width: 100%;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-action-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .location-action-btns .btn {
+    width: 100%;
+  }
+
+  .map-container {
+    height: 320px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding-bottom: 4.5rem; /* Space for mobile sticky action bar */
+  }
+
+  /* Show Sticky Action Bar on Mobile */
+  .mobile-sticky-bar {
+    display: block;
+  }
+
+  body {
+    padding-bottom: 60px;
+  }
+}
+
+/* Small Screens / Budget Phones (<= 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .brand-logo .logo-main {
+    font-size: 1.45rem;
+    letter-spacing: 0.16em;
+  }
+
+  .brand-logo .logo-sub {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+  }
+
+  .logo-crest {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-title span {
+    font-size: 1.25rem;
+  }
+
+  .hero-badge {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.75rem;
+  }
+
+  .about-floating-card {
+    position: static;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+
+  .diff-content h3 {
+    font-size: 1.75rem;
+  }
+
+  .diff-badges-box {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .kitchen-box {
+    width: 100%;
+    min-width: auto;
+    padding: 1.25rem 1rem;
+  }
+
+  .dishes-grid,
+  .category-grid,
+  .experience-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-box h2 {
+    font-size: 2.1rem;
+  }
+
+  .delivery-phone-pills {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .phone-pill-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .location-info-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .menu-controls-box {
+    padding: 1.25rem 1rem;
+  }
+}

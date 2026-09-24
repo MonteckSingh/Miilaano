@@ -1,0 +1,5 @@
+# Robots.txt for Miilaano Fine Dine
+User-agent: *
+Allow: /
+
+Sitemap: https://miilaano.com/sitemap.xml
